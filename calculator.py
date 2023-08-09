@@ -71,24 +71,31 @@ def validate_interest_frequency(prompt, valid_inputs):
     return freq
 
 def main():
+    """
+    Calculates the final balance for a term deposit using the start deposit amount,
+    interest rate, investment term and frequency of interest paid 
+
+    :return: final balance of the term deposit based on user inputs
+    """
     start_deposit_amount = validate_input("Please enter the start deposit amount (e.g. 10000): ")
     interest_rate = validate_interest_rate("Please enter the interest rate (e.g. 1.1): ")
     investment_term = validate_input("Please enter the investment term in years (e.g. 3): ")
-    interest_frequency = validate_interest_frequency("Please select the frequency of interest paid:\n 1) Monthly\n 2) Quarterly\n 3) Annually\n 4) At Maturity\n", [1,2,3,4])
+    interest_frequency = validate_interest_frequency("Please select the frequency of interest paid:\n1) Monthly\n2) Quarterly\n3) Annually\n4) At Maturity\n", [1,2,3,4])
     
+    if interest_frequency == 1:
+        frequency_str = "Monthly"
+        compound_interest = round(start_deposit_amount * (1 + interest_rate/1200) ** (investment_term * 12))
+    elif interest_frequency == 2:
+        frequency_str = "Quarterly"
+        compound_interest = round(start_deposit_amount * (1 + interest_rate/400) ** (investment_term * 4))
+    elif interest_frequency == 3:
+        frequency_str = "Annually"
+        compound_interest = round(start_deposit_amount * (1 + interest_rate/100) ** investment_term)
+    elif interest_frequency == 4:
+        frequency_str = "At Maturity"
+        compound_interest = round(start_deposit_amount + start_deposit_amount * (interest_rate/100) * investment_term)
     
+    return f"Based on the following inputs...\nStart deposit amount: ${start_deposit_amount}\nInterest rate: {interest_rate}\nInvestment term: {investment_term} years\nInterest paid: {frequency_str}\nYour final balace = ${compound_interest}"
 
 if __name__ == "__main__":
-    main()
-
-
-
-# Annual CI
-# A = P x (1 + r)^n
-# P = principal or start deposit amount
-# r = Interest rate
-# n = investment term
-
-# start_deposit_amount = 0
-# interest_rate = 0
-# investment_term = 0
+    print(main())
