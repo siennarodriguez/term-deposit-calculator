@@ -8,6 +8,7 @@ Result output is the final balance (e.g. $10,330 on the above inputs, interest p
 
 Author: Sienna Rodriguez
 Created: 09/08/2023
+Last Edited: 10/08/2023
 """
 
 def validate_input(prompt):
@@ -95,7 +96,8 @@ def main():
         frequency_str = "At Maturity"
         compound_interest = round(start_deposit_amount + start_deposit_amount * (interest_rate/100) * investment_term)
     
-    return f"Based on the following inputs...\nStart deposit amount: ${start_deposit_amount}\nInterest rate: {interest_rate}\nInvestment term: {investment_term} years\nInterest paid: {frequency_str}\nYour final balace = ${compound_interest}"
+    print("===================================")
+    return f"Calculating the following inputs...\nStart deposit amount: ${start_deposit_amount}\nInterest rate: {interest_rate}\nInvestment term: {investment_term} years\nInterest paid: {frequency_str}\n===================================\nYour Final Balace = ${compound_interest}"
 
 if __name__ == "__main__":
     print(main())
