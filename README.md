@@ -20,8 +20,8 @@ The system install of Python on macOS is not supported. Instead, a package manag
 
 ## Usage 
 
-1. Begin by cloning this repository to the location you want of your choice. Here is a [tutorial on cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). 
-2. Open a command-line or terminal and cd to the cloned directory
+1. Begin by cloning this repository to the location of your choice. Here is a [tutorial on cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository). 
+2. Open a command-line or terminal and `cd` to the cloned directory
 
     <img src="assets/images/cd-screenshot.png" width="400">
 
@@ -33,8 +33,9 @@ The system install of Python on macOS is not supported. Instead, a package manag
 
     <img src="assets/images/run-screenshot.png" width="400">
 
-5. Calculate results!
+5. Calculate results
 
     <img src="assets/images/output-screenshot.png" width="400">
 
+🥳 Finished 
 ---
